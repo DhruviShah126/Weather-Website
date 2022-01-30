@@ -1,5 +1,3 @@
-console.log('Client side javascript file is loaded!') // will showup when you go to developer tools and look at the console
-
 const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
 const messageOne = document.querySelector('#message-1')
