@@ -40,7 +40,7 @@ app.get('/help', (req, res) => { // help page
     res.render('help', {
         title: 'Help Page',
         name: 'Dhruvi Shah',
-        description: 'Feel free to contact us if you need any help!'
+        description: 'Welcome to the help page!'
     })
 })
 
@@ -61,7 +61,7 @@ app.get('/weather', (req, res) => { // weather page
             res.send({
                 forecast: forecastData, 
                 location,
-                address: req.query.address
+                address: req.query.address,
             })
         })
     })
