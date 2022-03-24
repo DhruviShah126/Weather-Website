@@ -9,11 +9,11 @@
         <div class="main-content">
             {{>header}}
             <p>Use this site to get your weather!</p>
-            <form>
-                <input placeholder="Enter zip code or city name">
-                <button>Search</button>
+            <form id='unitForm'>
+                <input placeholder="Enter zip code or city name" id='form-1'>
+                <input placeholder="Celcius(M) or Farenheit(F)?" id='form-2'>
+                <button>Done</button>
             </form>
-            <br>
             <p id="message-1"></p>
             <p id='message-2'></p>
         </div>

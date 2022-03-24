@@ -1,5 +1,7 @@
-const weatherForm = document.querySelector('form')
-const search = document.querySelector('input')
+const weatherForm = document.querySelector('#unitForm')
+const search = document.querySelector('#form-1')
+// const unitForm = document.querySelector('#unitChoice')
+const unitSys = document.querySelector('#form-2')
 const messageOne = document.querySelector('#message-1')
 const messageTwo = document.querySelector('#message-2')
 
@@ -7,11 +9,18 @@ weatherForm.addEventListener(('submit'), (e) => {
     e.preventDefault()
 
     const location = search.value
+    const unit = unitSys.value;
 
     messageOne.textContent = 'Loading...'
     messageTwo.textContent = ''
 
-    fetch('/weather?address=' + location).then((response) => {
+    // if (unit == 'F') {
+    //     console.log("Farenheit");
+    // } else {
+    //     console.log("Celsius")
+    // }
+
+    fetch('/weather?address=' + location + unit).then((response) => {
         response.json().then((data) => {
             if (data.error) {
                 messageOne.textContent = data.error
@@ -22,3 +31,4 @@ weatherForm.addEventListener(('submit'), (e) => {
         })
     })
 })
+
