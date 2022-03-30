@@ -10,9 +10,16 @@
             {{>header}}
             <p>Use this site to get your weather!</p>
             <form id='unitForm'>
-                <input placeholder="Enter zip code or city name" id='form-1'>
-                <input style="width:230px" placeholder="Celcius(C), Farenheit(F), or Kelvin(K)?" id='form-2'>
+                <input placeholder="Enter zip code or city name" id='form-1' style="width: 165px; height: 10px">
                 <button>Done</button>
+                <br>
+                <br>
+                <label for="temp-type" style="width: 1000px; margin-left: 2.5px">Units:</label>
+                <select name="tempType" id="temp-type">
+                    <option value="c">Celcius</option>
+                    <option value="f">Farenheight</option>
+                    <option value="k">Kelvin</option>
+                </select>
             </form>
             <p id="message-1"></p>
             <p id='message-2'></p>

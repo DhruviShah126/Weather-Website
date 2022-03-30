@@ -2,12 +2,14 @@ const request = require('request')
 
 const forecast = (addr, latitude, longitude, callback) => {
     var un = addr[addr.length - 1];
-    if (un == 'c' || un == 'C') {
+    if (un == 'c') {
         un = 'm';
-    } else if (un == 'k' || un == 'K') {
+    } else if (un == 'k') {
         un = 's';
+    } else {
+        un = 'f';
     }
-    console.log("un = " + un);
+
     const url = 'http://api.weatherstack.com/current?access_key=437d6f5d0a0eb6aae0278828fa553920&query=' + latitude + ',' + longitude + '&units=' + un
     request({ url, json: true}, (error, { body }) => {
         if (error) {                // will run if there is an error like no internet connection
