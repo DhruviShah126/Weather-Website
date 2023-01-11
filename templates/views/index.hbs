@@ -8,14 +8,14 @@
     <body>
         <div class="main-content">
             {{>header}}
-            <p>Use this site to get your weather!</p>
+            <p>Use this site to check the weather at any location in any unit of measure!</p>
             <form id='unitForm'>
                 <input placeholder="Enter zip code or city name" id='form-1' style="width: 165px; height: 10px">
                 <button>Done</button>
                 <br>
                 <br>
                 <label for="temp-type" style="width: 1000px; margin-left: 2.5px">Units:</label>
-                <select name="tempType" id="temp-type">
+                <select name="tempType" id="temp-type" style="font-family:monospace">
                     <option value="c">Celcius</option>
                     <option value="f">Farenheight</option>
                     <option value="k">Kelvin</option>

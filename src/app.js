@@ -24,7 +24,7 @@ app.use(express.static(publicDirectoryPath))
 
 app.get('', (req, res) => { // the empty string is used for the home page (the web address without any /)
     res.render('index', {
-        title: 'Weather App',
+        title: 'Weather Check',
         name: 'Dhruvi Shah'
     })
 })

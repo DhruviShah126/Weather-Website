@@ -1,6 +1,6 @@
 body {
     color: darkslateblue;
-    font-family: arial;
+    font-family: monospace;
     max-width: 650px;
     margin: 0 auto;
     padding: 0 16px;
@@ -45,6 +45,7 @@ header a {
 input {
     border: 1px solid #cccccc;
     padding: 8px;
+    font-family: 'monospace';
 }
 
 button {
@@ -53,4 +54,7 @@ button {
     background: #888888;
     color: white;
     padding: 8px;
+    font-family: 'monospace';
+    text-align: center;
+    line-height: 10.5px;
 }
