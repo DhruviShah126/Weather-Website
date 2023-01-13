@@ -31,18 +31,18 @@ app.get('', (req, res) => { // the empty string is used for the home page (the w
 
 app.get('/about', (req, res) => { // about page
     res.render('about', {
-        title: 'About Me',
+        title: 'About',
         name: 'Dhruvi Shah'
     })
 })
 
-app.get('/help', (req, res) => { // help page
-    res.render('help', {
-        title: 'Help Page',
-        name: 'Dhruvi Shah',
-        description: 'Welcome to the help page!'
-    })
-})
+// app.get('/help', (req, res) => { // help page
+//     res.render('help', {
+//         title: 'Help Page',
+//         name: 'Dhruvi Shah',
+//         description: 'Welcome to the help page!'
+//     })
+// })
 
 app.get('/weather', (req, res) => { // weather page
     if (!req.query.address) {
@@ -79,13 +79,13 @@ app.get('/products', (req, res) => {
     })
 })
 
-app.get('/help/*', (req, res) => { // the * catches all other pages that we do not have something specifcally written out for
-    res.render('404', {
-        title: '404',
-        name: 'Dhruvi Shah',
-        errorMessage: 'Help article not found'
-    })
-})
+// app.get('/help/*', (req, res) => { // the * catches all other pages that we do not have something specifcally written out for
+//     res.render('404', {
+//         title: '404',
+//         name: 'Dhruvi Shah',
+//         errorMessage: 'Help article not found'
+//     })
+// })
 
 app.get('*', (req, res) => { // the * catches all other pages that we do not have something specifcally written out for
     res.render('404', {

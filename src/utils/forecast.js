@@ -17,14 +17,20 @@ const forecast = (addr, latitude, longitude, callback) => {
         } else if (body.error) {    // will run if something like invalid location was provided
             callback('Unable to find location', undefined)
         } else {
+            var beg = "";
+            if (body.current.weather_descriptions[0] === "Light Rain") {
+                beg = "There is "
+            } else {
+                beg = "It is "
+            }
             if (un == 'f') {
-                callback(undefined, 'It is ' + body.current.weather_descriptions[0] + '. The current temperature is ' + body.current.temperature 
+                callback(undefined, beg + body.current.weather_descriptions[0] + '. The current temperature is ' + body.current.temperature 
                 + ' °F and it feels like ' + body.current.feelslike + ' °F. The humidity is ' + body.current.humidity + '%.' )
             } else if (un == 'm') {
-                callback(undefined, 'It is ' + body.current.weather_descriptions[0] + '. The current temperature is ' + body.current.temperature 
+                callback(undefined, beg + body.current.weather_descriptions[0] + '. The current temperature is ' + body.current.temperature 
                 + ' °C and it feels like ' + body.current.feelslike + ' °C. The humidity is ' + body.current.humidity + '%.' )
-            } else {
-                callback(undefined, 'It is ' + body.current.weather_descriptions[0] + '. The current temperature is ' + body.current.temperature 
+            } else { 
+                callback(undefined, beg + body.current.weather_descriptions[0] + '. The current temperature is ' + body.current.temperature 
                 + ' K and it feels like ' + body.current.feelslike + ' K. The humidity is ' + body.current.humidity + '%.' )
             }
         }
